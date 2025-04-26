@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Ellie's Virtual Library</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#main" class="skip">Skip to Main Content</a>
+        <img src="images/icon.jpg" alt="A pink and white book illustration.">
+        <button class="hamburger-menu">
+            ☰
+        </button>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href = "index.html" class="active">Home</a></li>
+                <li><a href="favorites.html">My Favorite Books</a></li>
+                <li><a href="least_favorites.html">My Least Favorite Books</a></li>
+                <li><a href="recent_books.html">Recent Books</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main class="parent" id="main">
+    <div class="title">
+        <h1>Ellie's Virtual Library</h1>
+    </div>
+
+    <div class="profile-image">
+        <img src="images/me.jpg" alt="A headshot of Ellie Haist smiling in front of a wall in Dublin, Ireland." class="profile-image">
+        <figcaption>Me in Dublin, Ireland ☘️</figcaption>
+    </div>
+
+    <div class="about-me">
+        <h2>About Me</h2>
+        <p>Hi! I'm Ellie, a book and library lover. This website is meant to showcase three of my passions: 
+            <ul class="custom-stars">
+                <li>Reading</li>
+                <li>Libraries</li>
+                <li>User Experience</li> 
+            </ul>
+    </div>
+
+    <div class="bookstore-image">
+        <img src="images/bookstore.jpeg" alt="A photo of Ellie in a bookstore in Cape Town, South Africa.">
+        <figcaption>Me exploring a bookstore in Cape Town, South Africa 🇿🇦</figcaption>
+    </div>
+
+    <div class="explore">
+        <h2>What you can explore on my website:</h2>
+        <p>In this website I showcase my favorite books, my least favorites, and a blurb of some recent books I have read.</p>
+    </div>
+
+
+    <div class="favorite-genres">
+        <h2>My Favorite Genres</h2>
+        <div class="genre-buttons">
+            <button class="genre-btn">Contemporary Fiction</button>
+            <button class="genre-btn">Historical Fiction</button>
+            <button class="genre-btn">Political Theory</button>
+            <button class="genre-btn">Romance</button>
+        </div>
+    </div>
+
+</main>
+<footer>
+    <p>Ellie's Virtual Library |</p> 
+    <p> Ann Arbor, MI | </p>
+    <p>(734) 717-1967</p>
+        <p>© Copyrights <span id="year"></span> by Ellie Haist. All rights reserved.</p>
+</footer>  
+<script src="script.js"></script>   
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>   
+</body>
+</html>

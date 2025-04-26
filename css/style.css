@@ -1,0 +1,588 @@
+/* Style for Skip to Main */
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  color: #00274C;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/* Style for Navigation Bar */
+header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 25px 0 black;
+  z-index: 100;
+  padding: 10px 20px;
+}
+
+header img {
+  height: 60px;
+  margin-left: 40px;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  box-shadow: 0 4px 10px;
+  padding: 10px 0;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.nav-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+header, footer, main {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  color: black;
+  text-align: center;
+}
+
+header * {
+  display: inline;
+}
+
+header li {
+  margin: 20px;
+}
+
+
+header li a{
+  color: black;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+
+a:hover {
+  color: purple; 
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid purple; 
+  text-decoration: bold;
+}
+
+/* Main styling */
+
+* {
+  box-sizing: border-box;
+} 
+
+h1 {
+  font-size: 2em;
+  color: black;
+}
+
+body{ 
+  height: 125vh; 
+  background-size: cover;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f7f0e6;
+  margin-top: 80px;
+  padding: 10px;
+  grid-template-areas: 'header' 'main' 'footer';
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px; 
+  padding: 20px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.container {
+  grid-column: 2 / 3;
+  text-align: center;
+}
+
+.title {
+  grid-column: 2 / 3;
+}
+
+/* Style for Personal Image */
+.profile-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 16%;
+  margin-bottom: 10px;
+}
+
+.bookstore-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 16%;
+  margin-bottom: 10px;
+}
+
+.bookstore-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 16%;
+  margin-bottom: 10px;
+}
+
+/* Style for Bullet Points */
+ul.custom-stars {
+  list-style: none;
+  padding-left: 1em;
+}
+
+/* I used https://emojicombos.com/star for the star text */
+ul.custom-stars li::before {
+  content: '✧';
+  margin-right: 1.0em;
+  font-size: 2.0em;
+  color: hotpink; 
+}
+
+/* Style for Index */
+.title {
+  grid-column: 2 / 3;
+}
+.profile-image {
+  grid-column: 2 / 3;
+}
+
+.bookstore-image {
+  grid-column: 2 / 3;
+  margin-bottom: 100px;
+}
+
+
+.about-me {
+  grid-column: 2 / 3;
+}
+
+.explore {
+  grid-column: 2 / 3;
+}
+
+.favorite-genres {
+  grid-column: 2 / 3;
+}
+
+/* Style for Buttons */
+.genre-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.genre-btn {
+  color: black;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.genre-btn:hover {
+/* This will create a shaded effect on hover */
+  filter: brightness(85%);
+}
+
+.genre-btn:nth-child(1) {
+  background-color: #f5bbb9;
+}
+
+.genre-btn:nth-child(2) {
+  background-color: #E0CBE4;
+} 
+
+.genre-btn:nth-child(3) {
+  background-color: #DDDD7B;
+} 
+
+.genre-btn:nth-child(4) {
+  background-color: #BAD6DA;
+} 
+
+/* Interactive Book Style */
+/* I used https://freefrontend.com/css-book-effects/ to help me troubleshoot some of this code.  */
+.book {
+  transform-style: preserve-3d;
+  position: relative;
+  height: 300px;
+  max-width: 100%;
+  cursor: pointer;
+  backface-visibility: hidden;
+  width: 150px; 
+  z-index: 1;
+  }
+  
+.front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  top: 0; 
+  left: 0;
+  transform-origin: left center;
+  transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+  z-index: 0;
+}
+  
+.front {
+  background:#ddd;
+  z-index: 2;
+  position: relative;
+  backface-visibility: hidden;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  transform-style: preserve-3d;
+}
+
+.front>img {
+  width: 100%;
+  border-bottom-right-radius: .5em;
+  border-top-right-radius: .5em;
+  backface-visibility: hidden;
+  /* height: 100%; */
+}
+
+.front::after {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #ddd; 
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  z-index: -1;
+}
+  
+.back {
+  background: #ddd;
+  z-index: 1;
+}
+  
+ .front, .page1, .page3, .page5 {
+  border-bottom-right-radius: .5em;
+  border-top-right-radius: .5em;
+}
+  
+.back, .page2, .page4, .page6 {
+  border-bottom-right-radius: .5em;
+  border-top-right-radius: .5em;
+}
+  
+.page1 { 
+  background: #efefef;
+  z-index: 0;
+}
+  
+.page2 {
+  background: #efefef;
+  z-index: 0;
+}
+  
+.page3 {
+  background: #f5f5f5;
+  z-index: 0;
+}
+  
+.page4 {
+  background: #f5f5f5;
+  z-index: 0;
+}
+  
+.page5 {
+  background: #fafafa;
+  z-index: 0;
+}
+  
+.page6 {
+  background: #fdfdfd;
+  z-index: 0;
+}
+
+
+.book:hover .front {
+  transform: rotateY(-160deg) scale(1.1);
+}
+  
+.book:hover .page1 {
+  transform: rotateY(-150deg) scale(1.1);
+}
+  
+.book:hover .page2 {
+  transform: rotateY(-30deg) scale(1.1);
+}
+  
+.book:hover .page3 {
+  transform: rotateY(-140deg) scale(1.1);
+}
+  
+.book:hover .page4 {
+  transform: rotateY(-40deg) scale(1.1);
+}
+  
+.book:hover .page5 {
+  transform: rotateY(-130deg) scale(1.1);
+}
+  
+.book:hover .page6 {
+  transform: rotateY(-50deg) scale(1.1);
+}
+  
+.book:hover .back {
+  transform: rotateY(-20deg) scale(1.1);
+}
+
+.book-information {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  display: grid;
+  grid-column: 2 / 3;
+  height: 100%;
+  margin-bottom: 40px;
+  min-width: 250px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: #e0e0a0;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(254, 199, 199, 0.2);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card-least {
+  display: grid;
+  grid-column: 2 / 3;
+  height: 100%;
+  margin-bottom: 40px;
+  min-width: 250px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: pink;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(254, 199, 199, 0.2);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card-least:last-child {
+  margin-bottom: 0;
+}
+
+/* Style for Recent Books Page */
+.genre-page {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.genre-container {
+  grid-column: 2 / 3;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px rgba(254, 199, 199, 0.2);
+  padding: 20px;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.genre-container:nth-of-type(2) {
+  background-color: #f5bbb9;
+}
+
+.genre-container:nth-of-type(3) {
+  background-color: #E0CBE4;
+}
+
+.genre-container:nth-of-type(4) {
+  background-color: #DDDD7B;
+}
+
+.genre-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #4c2f27;
+}
+
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 100px;
+  justify-items: center;
+}
+
+.book-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+}
+
+.book-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 0.5rem;
+}
+
+.book-card p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+
+/* Styling for the Footer */
+footer {
+  background-color: #f7f6f5;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: bolder;
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 4px 0;
+}
+
+footer span {
+  font-weight: bold;
+  color: purple 
+}
+
+
+/* Media Query for desktop/tablet */
+@media (min-width: 500px) {
+  .parent {
+    padding-top: 100px;
+    grid-column: 1 / 4;
+  }
+  
+  .title {
+    grid-column: 1 / 4;
+    text-align: center;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    box-shadow: none;
+  }
+  
+  .profile-image {
+    grid-column: 1 / 2;
+  }
+
+  .bookstore-image {
+    grid-column: 3 / 4;
+  }
+
+  .about-me {
+    grid-column: 2 / 3;
+  }
+  
+  .explore {
+    grid-column: 1 / 4;
+  }
+  
+  .favorite-genres {
+    grid-column: 1 / 4;
+  }
+
+  .card {
+    grid-column: auto;
+    justify-self: stretch;
+  }
+  
+  .card-least {
+    grid-column: auto;
+    justify-self: stretch;
+  } 
+
+  .book {
+    transition: transform 0.3s ease;
+  }
+
+  .book:hover {
+    transform: scale(1.05);
+  }
+  
+  .genre-container {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+}
+
+/* Media Query for prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+}
